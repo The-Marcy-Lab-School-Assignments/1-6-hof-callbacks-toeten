@@ -46,9 +46,21 @@ const nameHasB = myFind(myNames2, (name) => name.includes('B'));
 const nameHasZ = myFind(myNames, (name) => name.includes('Z'));
 //console.log(nameHasZ); // undefined
 
-const myFilter = () => {
+const myFilter = (arr, callback) => {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
 };
+const myNames3 = ['Alice', 'Bob', 'Charlie', 'Debbie', 'Barry'];
+const namesWithB = myFilter(myNames3, (name) => name.includes('B'));
+console.log(namesWithB); // ['Bob', 'Barry']
 
+const namesWithZ = myFilter(myNames, (name) => name.includes('Z'));
+console.log(namesWithZ); // []
 const sortWords = () => {
 };
 
