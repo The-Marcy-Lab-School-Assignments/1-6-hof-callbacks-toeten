@@ -82,11 +82,31 @@ const sortNumbers = (arr) => {
 const unsortedNums = [1, 100, 14, 3, 2, 11];
 const sortedNums = sortNumbers(unsortedNums);
 
-console.log(sortedNums); // [1, 2, 3, 11, 14, 100]
-console.log(unsortedNums); // [1, 100, 14, 3, 2, 11]
+//console.log(sortedNums); // [1, 2, 3, 11, 14, 100]
+//console.log(unsortedNums); // [1, 100, 14, 3, 2, 11]
 
-const sortNumbersBetter = () => {
+const sortNumbersBetter = (arr, isDescending = false) => {
+  let copy = [...arr];
+  return copy.sort((a, b) => isDescending ? b - a : a - b)
 };
+const unsortedNums2 = [1, 100, 14, 3, 2, 11];
+const bigToSmall = sortNumbersBetter(unsortedNums2, true);
+console.log(bigToSmall); // [100, 14, 11, 3, 2, 1]
+
+const smallToBig = sortNumbersBetter(unsortedNums2); // default param
+console.log(smallToBig); // [1, 2, 3, 11, 14, 100]
+
+
+/*const sortNumbersBetter = (arr, isDescending = false) => {
+  let copy = [...arr];
+  return copy.sort((a, b) => {
+    if (isDescending) {
+      return b - a; // For descending order, swap a and b
+    } else {
+      return a - b; // For ascending order, use the default
+    }
+  });
+};    made shorter by using ternary operator. */
 
 const sortUsersByOrder = () => {
 };
