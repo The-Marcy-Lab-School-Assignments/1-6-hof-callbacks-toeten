@@ -29,12 +29,15 @@ you're passing a reference to that function. */
 
 
 const logEachName = (names) => {
-  return names.forEach(console.log());
+  return names.forEach(console.log);
 };
+//you can use console.log AS your callback function.
+//No need for the ()
 
 const logEachUserBio = (users) => {
-  return users.forEach(console.log(users.bio));
+  return users.forEach((user) => console.log(user.bio));
 };
+//we need to call a proper callback function in .forEach()
 
 module.exports = {
   myEvery,
