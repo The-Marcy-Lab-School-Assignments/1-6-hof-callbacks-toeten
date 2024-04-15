@@ -108,8 +108,29 @@ console.log(smallToBig); // [1, 2, 3, 11, 14, 100]
   });
 };    made shorter by using ternary operator. */
 
-const sortUsersByOrder = () => {
+const sortUsersByOrder = (arr) => {
+  let copy = [...arr];
+  return copy.sort((or1, or2) =>
+    (or1.order > or2.order) ? 1 : (or1.order < or2.order) ? -1 : 0)
 };
+
+const users = [
+  { name: 'Alice', order: 1 },
+  { name: 'Bob', order: 3 },
+  { name: 'Charlie', order: 2 },
+  { name: 'Debbie', order: 4 },
+];
+
+const sortedUsers = sortUsersByOrder(users);
+console.log(sortedUsers);
+// [
+//   { name: 'Alice', order: 1 },
+//   { name: 'Charlie', order: 2 },
+//   { name: 'Bob', order: 3 },
+//   { name: 'Debbie', order: 4 },
+// ]
+
+
 
 const sortUsersByName = () => {
 };
