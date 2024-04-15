@@ -62,7 +62,7 @@ const namesWithB = myFilter(myNames3, (name) => name.includes('B'));
 const namesWithZ = myFilter(myNames3, (name) => name.includes('Z'));
 //console.log(namesWithZ); // []
 
-const sortWords = (arr, callback) => {
+const sortWords = (arr) => {
   let copy = [...arr]
   return copy.sort()
   //remember: alphabetical sorting is default for .sort()
@@ -71,11 +71,19 @@ const sortWords = (arr, callback) => {
 const unsortedNames = ['Charlie', 'Debbie', 'Alice', 'Bob'];
 const sortedNames = sortWords(unsortedNames);
 
-console.log(sortedNames); // ['Alice', 'Bob', 'Charlie', 'Debbie']
-console.log(unsortedNames); // ['Charlie', 'Debbie', 'Alice', 'Bob']
+//console.log(sortedNames); // ['Alice', 'Bob', 'Charlie', 'Debbie']
+//console.log(unsortedNames); // ['Charlie', 'Debbie', 'Alice', 'Bob']
 
-const sortNumbers = () => {
+const sortNumbers = (arr) => {
+  let copy = [...arr]
+  return copy.sort((a, b) => a - b)
+  //here we do need the call back inside
 };
+const unsortedNums = [1, 100, 14, 3, 2, 11];
+const sortedNums = sortNumbers(unsortedNums);
+
+console.log(sortedNums); // [1, 2, 3, 11, 14, 100]
+console.log(unsortedNums); // [1, 100, 14, 3, 2, 11]
 
 const sortNumbersBetter = () => {
 };
