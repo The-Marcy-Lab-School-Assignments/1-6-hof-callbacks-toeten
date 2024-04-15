@@ -122,7 +122,7 @@ const users = [
 ];
 
 const sortedUsers = sortUsersByOrder(users);
-console.log(sortedUsers);
+//console.log(sortedUsers);
 // [
 //   { name: 'Alice', order: 1 },
 //   { name: 'Charlie', order: 2 },
@@ -132,8 +132,23 @@ console.log(sortedUsers);
 
 
 
-const sortUsersByName = () => {
+const sortUsersByName = (arr) => {
+  let copy = [...arr];
+  return copy.sort((name1, name2) =>
+    (name1.name > name2.name) ? 1 : (name1.name < name2.name) ? -1 : 0)
 };
+const users1 = [
+  { name: 'Alice', order: 1 },
+  { name: 'Bob', order: 3 },
+  { name: 'Charlie', order: 2 },
+  { name: 'Debbie', order: 4 },
+];
+
+const sortedNames2 = sortUsersByName(users);
+console.log(sortedNames2);
+
+
+
 
 module.exports = {
   myForEach,
