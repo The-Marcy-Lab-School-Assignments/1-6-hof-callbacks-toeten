@@ -1,6 +1,6 @@
 const myForEach = (arr, callback) => {
-  for (let i = 0; i < arr.length; i++) {
-    callback(arr[i])
+  for (let i of arr) {
+    callback(i)
   }
 }
 const myNames = ['Alice', 'Bob', 'Charlie', 'Debbie'];
