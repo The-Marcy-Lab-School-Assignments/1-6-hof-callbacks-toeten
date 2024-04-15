@@ -43,7 +43,7 @@ const myNames2 = ['Alice', 'Bob', 'Charlie', 'Debbie', 'Barry'];
 const nameHasB = myFind(myNames2, (name) => name.includes('B'));
 //console.log(nameHasB); // 'Bob' not 'Barry' because 'Bob' is first
 
-const nameHasZ = myFind(myNames, (name) => name.includes('Z'));
+const nameHasZ = myFind(myNames2, (name) => name.includes('Z'));
 //console.log(nameHasZ); // undefined
 
 const myFilter = (arr, callback) => {
@@ -57,12 +57,22 @@ const myFilter = (arr, callback) => {
 };
 const myNames3 = ['Alice', 'Bob', 'Charlie', 'Debbie', 'Barry'];
 const namesWithB = myFilter(myNames3, (name) => name.includes('B'));
-console.log(namesWithB); // ['Bob', 'Barry']
+//console.log(namesWithB); // ['Bob', 'Barry']
 
-const namesWithZ = myFilter(myNames, (name) => name.includes('Z'));
-console.log(namesWithZ); // []
-const sortWords = () => {
+const namesWithZ = myFilter(myNames3, (name) => name.includes('Z'));
+//console.log(namesWithZ); // []
+
+const sortWords = (arr, callback) => {
+  let copy = [...arr]
+  return copy.sort()
+  //remember: alphabetical sorting is default for .sort()
+  //you dont need to write a callback in the ()
 };
+const unsortedNames = ['Charlie', 'Debbie', 'Alice', 'Bob'];
+const sortedNames = sortWords(unsortedNames);
+
+console.log(sortedNames); // ['Alice', 'Bob', 'Charlie', 'Debbie']
+console.log(unsortedNames); // ['Charlie', 'Debbie', 'Alice', 'Bob']
 
 const sortNumbers = () => {
 };
