@@ -31,8 +31,8 @@ const myDoubledNums = myMap(myNums, (x) => x * 2);
 
 const myFind = (arr, callback) => {
   let copy = [...arr];
-  for (let i = 0; i < arr.length; i++) {
-    if (callback(arr[i])) {
+  for (let i = 0; i < copy.length; i++) {
+    if (callback(copy[i])) {
       return arr[i]
     }
   }
